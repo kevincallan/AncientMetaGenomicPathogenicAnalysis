@@ -9,7 +9,7 @@ The TCD HPC clusters are not directly accessible from the internet. You must con
 ### Step 1: Connect to Access Host
 
 ```bash
-ssh callanke@rsync.tchpc.tcd.ie
+ssh user@rsync.tchpc.tcd.ie
 ```
 
 ### Step 2: Connect to Athena
@@ -42,7 +42,7 @@ module list          # List currently loaded modules
 
 ## Important Directories
 
-- `/home/callanke` - Home directory (50GB quota)
+- `/home/user` - Home directory (50GB quota)
 - `/projects` - Project data storage
 - `/scratch` - Temporary data processing (if available)
 
@@ -62,32 +62,32 @@ myquota              # Show your storage quota
 To copy files TO the server:
 ```bash
 # Basic syntax
-rsync -avz /path/to/local/file callanke@rsync.tchpc.tcd.ie:/path/on/server
+rsync -avz /path/to/local/file user@rsync.tchpc.tcd.ie:/path/on/server
 
 # Example: Copy a directory to your home directory
-rsync -avz ./my_data callanke@rsync.tchpc.tcd.ie:/home/callanke/
+rsync -avz ./my_data user@rsync.tchpc.tcd.ie:/home/user/
 
 # For large transfers, add progress flag
-rsync -avz --progress ./my_data callanke@rsync.tchpc.tcd.ie:/home/callanke/
+rsync -avz --progress ./my_data user@rsync.tchpc.tcd.ie:/home/user/
 ```
 
 To copy files FROM the server:
 ```bash
 # Basic syntax
-rsync -avz callanke@rsync.tchpc.tcd.ie:/path/on/server /path/to/local/destination
+rsync -avz user@rsync.tchpc.tcd.ie:/path/on/server /path/to/local/destination
 
 # Example: Copy from your home directory
-rsync -avz callanke@rsync.tchpc.tcd.ie:/home/callanke/results ./local_results
+rsync -avz user@rsync.tchpc.tcd.ie:/home/user/results ./local_results
 ```
 
 ### Using scp (Alternative)
 
 ```bash
 # Copy to server
-scp /path/to/local/file callanke@rsync.tchpc.tcd.ie:/path/on/server
+scp /path/to/local/file user@rsync.tchpc.tcd.ie:/path/on/server
 
 # Copy from server
-scp callanke@rsync.tchpc.tcd.ie:/path/on/server /path/to/local/destination
+scp user@rsync.tchpc.tcd.ie:/path/on/server /path/to/local/destination
 ```
 
 ## Storage Quotas
